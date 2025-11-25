@@ -29,6 +29,9 @@ public class MenuController {
     
     @FXML
     public void initialize() {
+        // Reproducir música del menú principal
+        MusicManager.playMusic("sounds/background_music/Cosmic Christmas Lights 2.mp3");
+        
         // Animar cada luna con un movimiento vertical simple
         animarLuna(lunaNumeros, 20, 2.5);
         animarLuna(lunaVocales, 25, 3.0);
@@ -72,7 +75,7 @@ public class MenuController {
     @FXML
     private void abrirMinijuegoNavidad() {
         // Por implementar
-        System.out.println("Minijuego de navidad - Por implementar");
+        abrirMinijuego("arbol-navidad-view.fxml", "Árbol de Navidad");
     }
     
     private void abrirMinijuego(String fxmlFile, String titulo) {
