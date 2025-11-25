@@ -57,11 +57,11 @@ public class MenuController {
         abrirMinijuego("arbol-vocales-view.fxml", "Árbol de Vocales");
     }
     
-    @FXML
-    private void abrirMinijuegoAnimales() {
-        // Por implementar
-        System.out.println("Minijuego de animales - Por implementar");
-    }
+ @FXML
+private void abrirMinijuegoAnimales() {
+    abrirMinijuego("arbol-animales-view.fxml", "Árbol de Animales");
+}
+
     
     @FXML
     private void abrirMinijuegoFormas() {
