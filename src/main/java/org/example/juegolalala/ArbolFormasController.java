@@ -55,8 +55,8 @@ public class ArbolFormasController {
         formaASombra.put(circulo, sombra1);
         formaASombra.put(corazon, sombra2);
         formaASombra.put(cuadrado, sombra3);
-        formaASombra.put(estrella, sombra4);
-        formaASombra.put(triangulo, sombra5);
+        formaASombra.put(estrella, sombra5);
+        formaASombra.put(triangulo, sombra4);
 
         // Estado inicial (ninguna colocada)
         formasColocadas.put(circulo, false);
