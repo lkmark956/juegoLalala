@@ -16,24 +16,24 @@
    
    <!-- Sombras (zonas donde colocar las vocales) -->
    <!-- Vocal A - arriba centro del árbol -->
-   <ImageView fx:id="sombra1" fitHeight="330.0" fitWidth="280.0" layoutX="560.0" layoutY="115.0" 
+   <ImageView fx:id="sombra1" fitHeight="300.0" fitWidth="300.0" layoutX="525.0" layoutY="100.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
    <!-- Vocal E - izquierda media-alta -->
-   <ImageView fx:id="sombra2" fitHeight="230.0" fitWidth="230.0" layoutX="570.0" layoutY="221.0" 
+   <ImageView fx:id="sombra2" fitHeight="300.0" fitWidth="300.0" layoutX="439.0" layoutY="220.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
    <!-- Vocal I - derecha media-alta -->
-   <ImageView fx:id="sombra3" fitHeight="230.0" fitWidth="230.0" layoutX="729.0" layoutY="223.0" 
+   <ImageView fx:id="sombra3" fitHeight="300.0" fitWidth="300.0" layoutX="593.0" layoutY="215.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
    <!-- Vocal O - izquierda media-baja -->
-   <ImageView fx:id="sombra4" fitHeight="230.0" fitWidth="230.0" layoutX="519.0" layoutY="339.0" 
+   <ImageView fx:id="sombra4" fitHeight="300.0" fitWidth="335.0" layoutX="366.0" layoutY="315.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
    <!-- Vocal U - derecha media-baja -->
-   <ImageView fx:id="sombra5" fitHeight="230.0" fitWidth="230.0" layoutX="656.0" layoutY="339.0" 
-              opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="sombra5" fitHeight="300.0" fitWidth="300.0" layoutX="660.0" layoutY="325.0" 
+              opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
    
    <!-- Vocales en el recuadro izquierdo -->
    <ImageView fx:id="letraA" fitHeight="230.0" fitWidth="230.0" layoutX="9.0" layoutY="70.0" 
@@ -41,7 +41,7 @@
       <Image url="@img/arbol_letras/A.png" />
    </ImageView>
    
-   <ImageView fx:id="letraE" fitHeight="230.0" fitWidth="230.0" layoutX="155.0" layoutY="70.0" 
+   <ImageView fx:id="letraE" fitHeight="230.0" fitWidth="230.0" layoutX="135.0" layoutY="70.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_letras/E.png" />
    </ImageView>
@@ -51,7 +51,7 @@
       <Image url="@img/arbol_letras/I.png" />
    </ImageView>
    
-   <ImageView fx:id="letraO" fitHeight="230.0" fitWidth="230.0" layoutX="155.0" layoutY="221.0" 
+   <ImageView fx:id="letraO" fitHeight="230.0" fitWidth="230.0" layoutX="135.0" layoutY="221.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_letras/O.png" />
    </ImageView>
