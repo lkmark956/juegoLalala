@@ -72,7 +72,7 @@ public class MenuController {
     @FXML
     private void abrirMinijuegoNavidad() {
         // Por implementar
-        System.out.println("Minijuego de navidad - Por implementar");
+        abrirMinijuego("arbol-navidad-view.fxml", "Árbol de Navidad");
     }
     
     private void abrirMinijuego(String fxmlFile, String titulo) {
