@@ -21,7 +21,7 @@ public class MusicManager {
             Media media = new Media(musicPath);
             mediaPlayer = new MediaPlayer(media);
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Reproducción en bucle
-            mediaPlayer.setVolume(0.5); // Volumen al 50%
+            mediaPlayer.setVolume(0.25); // Volumen al 25%
             mediaPlayer.play();
             currentMusic = musicFile;
         } catch (Exception e) {
