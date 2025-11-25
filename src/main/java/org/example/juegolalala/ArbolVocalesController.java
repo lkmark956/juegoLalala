@@ -59,6 +59,9 @@ public class ArbolVocalesController {
 
     @FXML
     public void initialize() {
+        // Reproducir música del minijuego
+        MusicManager.playMusic("sounds/background_music/Cosmic Christmas Lights.mp3");
+        
         // Configurar efecto de selección
         efectoSeleccion.setColor(Color.YELLOW);
         efectoSeleccion.setRadius(20);
@@ -188,6 +191,7 @@ public class ArbolVocalesController {
             Stage stage = (Stage) rootPane.getScene().getWindow();
             stage.setTitle("Menú Principal");
             stage.setScene(scene);
+            // La música del menú se cambiará automáticamente en MenuController.initialize()
         } catch (IOException e) {
             e.printStackTrace();
         }
