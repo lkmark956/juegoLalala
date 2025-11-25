@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+      prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.juegolalala.MenuController">
+   
+   <!-- Imagen de fondo -->
+   <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+      <Image url="@img/menu_principal/Inicio.png" />
+   </ImageView>
+   
+   <!-- Luna de Números (arriba derecha alrededor de la Tierra) -->
+   <ImageView fx:id="lunaNumeros" fitHeight="150.0" fitWidth="150.0" layoutX="900.0" layoutY="250.0" 
+              onMouseClicked="#abrirMinijuegoNumeros" pickOnBounds="true" preserveRatio="true" 
+              style="-fx-cursor: hand;">
+      <Image url="@img/lunas/luna_numeros.png" />
+   </ImageView>
+   
+   <!-- Luna de Vocales (derecha alrededor de la Tierra) -->
+   <ImageView fx:id="lunaVocales" fitHeight="145.0" fitWidth="145.0" layoutX="1020.0" layoutY="430.0" 
+              onMouseClicked="#abrirMinijuegoVocales" pickOnBounds="true" preserveRatio="true" 
+              style="-fx-cursor: hand;">
+      <Image url="@img/lunas/luna_vocales.png" />
+   </ImageView>
+   
+   <!-- Luna de Animales (abajo derecha alrededor de la Tierra) -->
+   <ImageView fx:id="lunaAnimales" fitHeight="148.0" fitWidth="148.0" layoutX="810.0" layoutY="560.0" 
+              onMouseClicked="#abrirMinijuegoAnimales" pickOnBounds="true" preserveRatio="true" 
+              style="-fx-cursor: hand;">
+      <Image url="@img/lunas/luna_animales.png" />
+   </ImageView>
+   
+   <!-- Luna de Formas (izquierda alrededor de la Tierra) -->
+   <ImageView fx:id="lunaFormas" fitHeight="140.0" fitWidth="140.0" layoutX="180.0" layoutY="320.0" 
+              onMouseClicked="#abrirMinijuegoFormas" pickOnBounds="true" preserveRatio="true" 
+              style="-fx-cursor: hand;">
+      <Image url="@img/lunas/luna_formas.png" />
+   </ImageView>
+   
+   <!-- Luna de Navidad (izquierda abajo alrededor de la Tierra) -->
+   <ImageView fx:id="lunaNavidad" fitHeight="143.0" fitWidth="143.0" layoutX="200.0" layoutY="530.0" 
+              onMouseClicked="#abrirMinijuegoNavidad" pickOnBounds="true" preserveRatio="true" 
+              style="-fx-cursor: hand;">
+      <Image url="@img/lunas/luna_navidad.png" />
+   </ImageView>
+   
+</Pane>
