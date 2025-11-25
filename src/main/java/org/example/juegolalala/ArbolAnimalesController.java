@@ -24,7 +24,7 @@ public class ArbolAnimalesController {
     private ImageView perro;
 
     @FXML
-    private ImageView pato;
+    private ImageView pajaro;
 
     @FXML
     private ImageView conejo;
@@ -41,7 +41,7 @@ public class ArbolAnimalesController {
     @FXML
     private ImageView sombra2; // Conejo (medio izquierda)
     @FXML
-    private ImageView sombra3; // Pato (medio derecha)
+    private ImageView sombra3; // pajaro (medio derecha)
     @FXML
     private ImageView sombra4; // Gato (abajo izquierda)
     @FXML
@@ -62,25 +62,25 @@ public class ArbolAnimalesController {
         // Mapear cada animal con su sombra correcta
         animalASombra.put(perro,   sombra1);
         animalASombra.put(conejo,  sombra2);
-        animalASombra.put(pato,    sombra3);
+        animalASombra.put(pajaro,  sombra3);
         animalASombra.put(gato,    sombra4);
         animalASombra.put(pez,     sombra5);
 
         // Inicializar estado (sin colocar)
-        animalesColocados.put(perro,  false);
-        animalesColocados.put(pato,   false);
-        animalesColocados.put(conejo, false);
-        animalesColocados.put(pez,    false);
-        animalesColocados.put(gato,   false);
+        animalesColocados.put(perro,   false);
+        animalesColocados.put(pajaro,  false);
+        animalesColocados.put(conejo,  false);
+        animalesColocados.put(pez,     false);
+        animalesColocados.put(gato,    false);
 
         // Eventos de selección para cada animal
         configurarSeleccion(perro);
-        configurarSeleccion(pato);
+        configurarSeleccion(pajaro);
         configurarSeleccion(conejo);
         configurarSeleccion(pez);
         configurarSeleccion(gato);
 
-        // Eventos de click para cada sombra
+        // Eventos de click para cada sombra (por si el niño pincha justo ahí)
         configurarSombra(sombra1);
         configurarSombra(sombra2);
         configurarSombra(sombra3);
@@ -103,41 +103,74 @@ public class ArbolAnimalesController {
 
     private void configurarSombra(ImageView sombra) {
         sombra.setOnMouseClicked(event -> {
-            if (animalSeleccionado != null) {
-                ImageView sombraCorrecta = animalASombra.get(animalSeleccionado);
-
-                if (sombra == sombraCorrecta) {
-                    // Colocar animal en la sombra
-                    animalSeleccionado.setLayoutX(sombra.getLayoutX());
-                    animalSeleccionado.setLayoutY(sombra.getLayoutY());
-                    animalSeleccionado.setFitWidth(sombra.getFitWidth());
-                    animalSeleccionado.setFitHeight(sombra.getFitHeight());
-
-                    animalSeleccionado.setEffect(null);
-                    animalesColocados.put(animalSeleccionado, true);
-                    animalSeleccionado.setStyle("-fx-cursor: default;");
-                    animalSeleccionado = null;
-
-                    verificarJuegoCompletado();
-                } else {
-                    // Efecto de error
-                    Glow errorEffect = new Glow(0.8);
-                    sombra.setEffect(errorEffect);
-
-                    new Thread(() -> {
-                        try {
-                            Thread.sleep(500);
-                            javafx.application.Platform.runLater(() -> sombra.setEffect(null));
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }).start();
-                }
-            }
+            manejarClickEnSombra(sombra);
         });
         sombra.setStyle("-fx-cursor: hand;");
         sombra.setOpacity(0.3);
         sombra.setPickOnBounds(true);
+    }
+
+    /**
+     * Lógica común al hacer clic en una sombra (o en el botón invisible encima).
+     */
+    private void manejarClickEnSombra(ImageView sombra) {
+        if (animalSeleccionado != null) {
+            ImageView sombraCorrecta = animalASombra.get(animalSeleccionado);
+
+            if (sombra == sombraCorrecta) {
+                // Colocar animal en la sombra
+                animalSeleccionado.setLayoutX(sombra.getLayoutX());
+                animalSeleccionado.setLayoutY(sombra.getLayoutY());
+                animalSeleccionado.setFitWidth(sombra.getFitWidth());
+                animalSeleccionado.setFitHeight(sombra.getFitHeight());
+
+                animalSeleccionado.setEffect(null);
+                animalesColocados.put(animalSeleccionado, true);
+                animalSeleccionado.setStyle("-fx-cursor: default;");
+                animalSeleccionado = null;
+
+                verificarJuegoCompletado();
+            } else {
+                // Efecto de error
+                Glow errorEffect = new Glow(0.8);
+                sombra.setEffect(errorEffect);
+
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(500);
+                        javafx.application.Platform.runLater(() -> sombra.setEffect(null));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+            }
+        }
+    }
+
+    // Métodos que llaman los botones invisibles
+    @FXML
+    private void clickSombra1() {
+        manejarClickEnSombra(sombra1);
+    }
+
+    @FXML
+    private void clickSombra2() {
+        manejarClickEnSombra(sombra2);
+    }
+
+    @FXML
+    private void clickSombra3() {
+        manejarClickEnSombra(sombra3);
+    }
+
+    @FXML
+    private void clickSombra4() {
+        manejarClickEnSombra(sombra4);
+    }
+
+    @FXML
+    private void clickSombra5() {
+        manejarClickEnSombra(sombra5);
     }
 
     private void verificarJuegoCompletado() {
