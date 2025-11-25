@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="720.0" prefWidth="1280.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.juegolalala.ArbolFormasController">
+
+    <!-- Fondo -->
+    <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+        <Image url="@img/arbol_formas/Arbol_Formas_Sombra2.png" />
+    </ImageView>
+
+    <!-- SOMBRAS (solo referencia visual, no clic) -->
+    <ImageView fx:id="sombra1" layoutX="653" layoutY="115" fitWidth="230" fitHeight="230" opacity="0.3"/>
+    <ImageView fx:id="sombra2" layoutX="570" layoutY="221" fitWidth="230" fitHeight="230" opacity="0.3"/>
+    <ImageView fx:id="sombra3" layoutX="729" layoutY="223" fitWidth="230" fitHeight="230" opacity="0.3"/>
+    <ImageView fx:id="sombra4" layoutX="519" layoutY="339" fitWidth="230" fitHeight="230" opacity="0.3"/>
+    <ImageView fx:id="sombra5" layoutX="656" layoutY="339" fitWidth="230" fitHeight="230" opacity="0.3"/>
+
+    <!-- FORMAS EN LA COLUMNA IZQUIERDA (MISMAS POSICIONES QUE VOCES/NÚMEROS/ANIMALES) -->
+    <ImageView fx:id="circulo"  layoutX="9"   layoutY="70"  fitWidth="230" fitHeight="230" preserveRatio="true">
+        <Image url="@img/arbol_formas/Circulo.png"/>
+    </ImageView>
+
+    <ImageView fx:id="corazon"  layoutX="155" layoutY="70"  fitWidth="230" fitHeight="230" preserveRatio="true">
+        <Image url="@img/arbol_formas/Corazon.png"/>
+    </ImageView>
+
+    <ImageView fx:id="cuadrado" layoutX="9"   layoutY="221" fitWidth="230" fitHeight="230" preserveRatio="true">
+        <Image url="@img/arbol_formas/Cuadrado.png"/>
+    </ImageView>
+
+    <ImageView fx:id="estrella" layoutX="155" layoutY="221" fitWidth="230" fitHeight="230" preserveRatio="true">
+        <Image url="@img/arbol_formas/Estrella.png"/>
+    </ImageView>
+
+    <ImageView fx:id="triangulo" layoutX="9"   layoutY="372" fitWidth="230" fitHeight="230" preserveRatio="true">
+        <Image url="@img/arbol_formas/Triangulo.png"/>
+    </ImageView>
+
+    <!-- BOTÓN VOLVER -->
+    <Button layoutX="1100" layoutY="20"
+            prefWidth="150" prefHeight="50"
+            text="Volver al Menú"
+            style="-fx-background-color:#4CAF50; -fx-text-fill:white;
+                   -fx-font-weight:bold; -fx-font-size:16px;
+                   -fx-background-radius:10;"
+            onAction="#volverAlMenu"/>
+
+    <!-- BOTONES INVISIBLES ENCIMA DE LAS SOMBRAS (los moverás con Scene Builder si hace falta) -->
+
+    <Button fx:id="btnSombra1"
+            layoutX="690" layoutY="165"
+            prefWidth="120" prefHeight="120"
+            opacity="0"
+            style="-fx-background-color:transparent; -fx-cursor:hand;"
+            onAction="#clickSombra1"/>
+
+    <Button fx:id="btnSombra2"
+            layoutX="595" layoutY="270"
+            prefWidth="120" prefHeight="120"
+            opacity="0"
+            style="-fx-background-color:transparent; -fx-cursor:hand;"
+            onAction="#clickSombra2"/>
+
+    <Button fx:id="btnSombra3"
+            layoutX="765" layoutY="275"
+            prefWidth="120" prefHeight="120"
+            opacity="0"
+            style="-fx-background-color:transparent; -fx-cursor:hand;"
+            onAction="#clickSombra3"/>
+
+    <Button fx:id="btnSombra4"
+            layoutX="545" layoutY="390"
+            prefWidth="120" prefHeight="120"
+            opacity="0"
+            style="-fx-background-color:transparent; -fx-cursor:hand;"
+            onAction="#clickSombra4"/>
+
+    <Button fx:id="btnSombra5"
+            layoutX="700" layoutY="395"
+            prefWidth="120" prefHeight="120"
+            opacity="0"
+            style="-fx-background-color:transparent; -fx-cursor:hand;"
+            onAction="#clickSombra5"/>
+
+</Pane>
