@@ -52,29 +52,31 @@ public class MenuController {
     
     @FXML
     private void abrirMinijuegoNumeros() {
+        SoundEffectManager.playCorrectSound();
         abrirMinijuego("arbol-numeros-view.fxml", "Árbol de Números");
     }
     
     @FXML
     private void abrirMinijuegoVocales() {
+        SoundEffectManager.playCorrectSound();
         abrirMinijuego("arbol-vocales-view.fxml", "Árbol de Vocales");
     }
     
     @FXML
     private void abrirMinijuegoAnimales() {
-        // Por implementar
-         abrirMinijuego("arbol-animales-view.fxml", "Árbol de animales");
+        SoundEffectManager.playCorrectSound();
+        abrirMinijuego("arbol-animales-view.fxml", "Árbol de animales");
     }
     
     @FXML
     private void abrirMinijuegoFormas() {
-        // Por implementar
+        SoundEffectManager.playCorrectSound();
         abrirMinijuego("arbol-formas-view.fxml", "Árbol de Formas");
     }
     
     @FXML
     private void abrirMinijuegoNavidad() {
-        // Por implementar
+        SoundEffectManager.playCorrectSound();
         abrirMinijuego("arbol-navidad-view.fxml", "Árbol de Navidad");
     }
     
