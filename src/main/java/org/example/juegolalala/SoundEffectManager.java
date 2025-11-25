@@ -18,7 +18,7 @@ public class SoundEffectManager {
             String soundPath = SoundEffectManager.class.getResource(soundFile).toExternalForm();
             Media media = new Media(soundPath);
             MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setVolume(0.7); // Volumen al 70%
+            mediaPlayer.setVolume(0.9); // Volumen al 90%
             mediaPlayer.play();
             
             // Liberar recursos cuando termine de reproducirse
