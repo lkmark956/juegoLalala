@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class ArbolVocalesController {
     
@@ -158,7 +161,11 @@ public class ArbolVocalesController {
         boolean todasColocadas = letrasColocadas.values().stream().allMatch(colocada -> colocada);
         
         if (todasColocadas) {
-            mostrarMensajeVictoria();
+            // Iniciar contador de 5 segundos invisible
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3), event -> {
+                mostrarMensajeVictoria();
+            }));
+            timeline.play();
         }
     }
     
