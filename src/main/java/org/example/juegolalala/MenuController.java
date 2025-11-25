@@ -66,7 +66,7 @@ private void abrirMinijuegoAnimales() {
     @FXML
     private void abrirMinijuegoFormas() {
         // Por implementar
-        System.out.println("Minijuego de formas - Por implementar");
+         abrirMinijuego("arbol-formas-view.fxml", "Árbol de Animales");
     }
     
     @FXML
