@@ -16,7 +16,7 @@
    
    <!-- Sombras (zonas donde colocar las vocales) -->
    <!-- Vocal A - arriba centro del árbol -->
-   <ImageView fx:id="sombra1" fitHeight="230.0" fitWidth="230.0" layoutX="653.0" layoutY="115.0" 
+   <ImageView fx:id="sombra1" fitHeight="330.0" fitWidth="280.0" layoutX="560.0" layoutY="115.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
    <!-- Vocal E - izquierda media-alta -->
