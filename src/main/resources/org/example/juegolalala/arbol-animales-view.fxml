@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="rootPane"
+      maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="720.0" prefWidth="1280.0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.juegolalala.ArbolAnimalesController">
+
+    <!-- Fondo: árbol con los huecos (solo imagen plana) -->
+    <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+        <Image url="@img/arbol_animales/arbol_animales.png" />
+    </ImageView>
+
+    <!-- Sombras / posiciones sobre el árbol -->
+    <!-- Perro - arriba centro del árbol -->
+    <ImageView fx:id="sombra1" fitHeight="230.0" fitWidth="230.0"
+               layoutX="653.0" layoutY="115.0"
+               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+
+    <!-- Conejo - izquierda media-alta -->
+    <ImageView fx:id="sombra2" fitHeight="230.0" fitWidth="230.0"
+               layoutX="570.0" layoutY="221.0"
+               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+
+    <!-- Pato - derecha media-alta -->
+    <ImageView fx:id="sombra3" fitHeight="230.0" fitWidth="230.0"
+               layoutX="729.0" layoutY="223.0"
+               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+
+    <!-- Gato - izquierda media-baja -->
+    <ImageView fx:id="sombra4" fitHeight="230.0" fitWidth="230.0"
+               layoutX="519.0" layoutY="339.0"
+               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+
+    <!-- Pez - derecha media-baja -->
+    <ImageView fx:id="sombra5" fitHeight="230.0" fitWidth="230.0"
+               layoutX="656.0" layoutY="339.0"
+               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
+
+    <!-- Animales en el recuadro de la izquierda (mismas posiciones que vocales) -->
+    <ImageView fx:id="perro" fitHeight="230.0" fitWidth="230.0"
+               layoutX="9.0" layoutY="70.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@img/arbol_animales/Perro.png" />
+    </ImageView>
+
+    <ImageView fx:id="pato" fitHeight="230.0" fitWidth="230.0"
+               layoutX="155.0" layoutY="70.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@img/arbol_animales/Pato.png" />
+    </ImageView>
+
+    <ImageView fx:id="conejo" fitHeight="230.0" fitWidth="230.0"
+               layoutX="9.0" layoutY="221.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@img/arbol_animales/Conejo.png" />
+    </ImageView>
+
+    <ImageView fx:id="pez" fitHeight="230.0" fitWidth="230.0"
+               layoutX="155.0" layoutY="221.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@img/arbol_animales/Pez.png" />
+    </ImageView>
+
+    <ImageView fx:id="gato" fitHeight="230.0" fitWidth="230.0"
+               layoutX="9.0" layoutY="372.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@img/arbol_animales/Gato.png" />
+    </ImageView>
+
+    <!-- Botón para volver al menú -->
+    <Button layoutX="1100.0" layoutY="20.0" mnemonicParsing="false"
+            onAction="#volverAlMenu"
+            prefHeight="50.0" prefWidth="150.0"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white;
+                   -fx-font-size: 16px; -fx-font-weight: bold;
+                   -fx-background-radius: 10;"
+            text="Volver al Menú" />
+</Pane>
