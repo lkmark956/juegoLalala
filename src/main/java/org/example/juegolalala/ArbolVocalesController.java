@@ -126,6 +126,9 @@ public class ArbolVocalesController {
             ImageView sombraCorrecta = letraASombra.get(letraSeleccionada);
 
             if (sombra == sombraCorrecta) {
+                // ¡Correcto! Reproducir sonido de acierto
+                SoundEffectManager.playCorrectSound();
+                
                 // Colocar letra correctamente
                 letraSeleccionada.setLayoutX(sombra.getLayoutX());
                 letraSeleccionada.setLayoutY(sombra.getLayoutY());
@@ -140,7 +143,9 @@ public class ArbolVocalesController {
                 verificarJuegoCompletado();
 
             } else {
-                // Efecto de error
+                // Incorrecto - reproducir sonido de error y hacer efecto visual
+                SoundEffectManager.playErrorSound();
+                
                 Glow glow = new Glow(0.8);
                 sombra.setEffect(glow);
 

@@ -129,7 +129,10 @@ public class ArbolNumerosController {
             ImageView sombraCorrecta = adornoASombra.get(adornoSeleccionado);
 
             if (sombra == sombraCorrecta) {
-                // ¡Correcto! Colocar el adorno sobre la sombra
+                // ¡Correcto! Reproducir sonido de acierto
+                SoundEffectManager.playCorrectSound();
+                
+                // Colocar el adorno sobre la sombra
                 adornoSeleccionado.setLayoutX(sombra.getLayoutX());
                 adornoSeleccionado.setLayoutY(sombra.getLayoutY());
                 adornoSeleccionado.setFitWidth(sombra.getFitWidth());
@@ -148,7 +151,9 @@ public class ArbolNumerosController {
                 // Verificar si todos los números están colocados
                 verificarJuegoCompletado();
             } else {
-                // Incorrecto - hacer un efecto de "error"
+                // Incorrecto - reproducir sonido de error y hacer efecto visual
+                SoundEffectManager.playErrorSound();
+                
                 Glow errorEffect = new Glow(0.8);
                 sombra.setEffect(errorEffect);
 
