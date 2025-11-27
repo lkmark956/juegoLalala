@@ -22,57 +22,73 @@ public class ArbolFormasController {
     @FXML
     private Pane rootPane;
 
-    // FIGURAS
-    @FXML private ImageView circulo;
-    @FXML private ImageView corazon;
-    @FXML private ImageView cuadrado;
-    @FXML private ImageView estrella;
-    @FXML private ImageView triangulo;
+    @FXML
+    private ImageView cuadrado;
 
-    // SOMBRAS
-    @FXML private ImageView sombra1; // circulo
-    @FXML private ImageView sombra2; // corazon
-    @FXML private ImageView sombra3; // cuadrado
-    @FXML private ImageView sombra4; // estrella
-    @FXML private ImageView sombra5; // triangulo
+    @FXML
+    private ImageView circulo;
+
+    @FXML
+    private ImageView estrella;
+
+    @FXML
+    private ImageView triangulo;
+
+    @FXML
+    private ImageView corazon;
+
+    @FXML
+    private ImageView sombra1;
+
+    @FXML
+    private ImageView sombra2;
+
+    @FXML
+    private ImageView sombra3;
+
+    @FXML
+    private ImageView sombra4;
+
+    @FXML
+    private ImageView sombra5;
 
     private ImageView formaSeleccionada = null;
-
     private final Map<ImageView, ImageView> formaASombra = new HashMap<>();
     private final Map<ImageView, Boolean> formasColocadas = new HashMap<>();
-
     private final DropShadow efectoSeleccion = new DropShadow();
 
     @FXML
     public void initialize() {
-
-        // Efecto visual al seleccionar
+        // Reproducir música del minijuego
+        MusicManager.playMusic("sounds/background_music/Cosmic Christmas Lights.mp3");
+        
+        // Configurar efecto de selección
         efectoSeleccion.setColor(Color.YELLOW);
         efectoSeleccion.setRadius(20);
         efectoSeleccion.setSpread(0.7);
 
-        // Mapear figuras → sombras correctas
-        formaASombra.put(circulo, sombra1);
-        formaASombra.put(corazon, sombra2);
-        formaASombra.put(cuadrado, sombra3);
-        formaASombra.put(estrella, sombra5);
+        // Mapear cada forma con su sombra correspondiente
+        formaASombra.put(cuadrado, sombra1);
+        formaASombra.put(circulo, sombra2);
+        formaASombra.put(estrella, sombra3);
         formaASombra.put(triangulo, sombra4);
+        formaASombra.put(corazon, sombra5);
 
-        // Estado inicial (ninguna colocada)
-        formasColocadas.put(circulo, false);
-        formasColocadas.put(corazon, false);
+        // Inicializar estado de formas
         formasColocadas.put(cuadrado, false);
+        formasColocadas.put(circulo, false);
         formasColocadas.put(estrella, false);
         formasColocadas.put(triangulo, false);
+        formasColocadas.put(corazon, false);
 
-        // Configurar clic en formas
-        configurarSeleccion(circulo);
-        configurarSeleccion(corazon);
+        // Configurar eventos de selección de formas
         configurarSeleccion(cuadrado);
+        configurarSeleccion(circulo);
         configurarSeleccion(estrella);
         configurarSeleccion(triangulo);
+        configurarSeleccion(corazon);
 
-        // Configurar clic en sombras (por si se quiere usar)
+        // Configurar eventos directos sobre sombras (opcional)
         configurarSombra(sombra1);
         configurarSombra(sombra2);
         configurarSombra(sombra3);
@@ -82,7 +98,6 @@ public class ArbolFormasController {
 
     private void configurarSeleccion(ImageView forma) {
         forma.setOnMouseClicked(event -> {
-
             if (!formasColocadas.get(forma)) {
 
                 if (formaSeleccionada != null)
@@ -104,63 +119,63 @@ public class ArbolFormasController {
         sombra.setPickOnBounds(true);
     }
 
-    // -------------------------------
-    // 🔵 Lógica unificada para sombras
-    // -------------------------------
-
+    // 🔵 LÓGICA CENTRALIZADA DE CLIC EN SOMBRA (botón invisible o sombra real)
     private void manejarClickEnSombra(ImageView sombra) {
 
-        if (formaSeleccionada == null)
-            return;
+        if (formaSeleccionada != null) {
 
-        ImageView sombraCorrecta = formaASombra.get(formaSeleccionada);
+            ImageView sombraCorrecta = formaASombra.get(formaSeleccionada);
 
-        if (sombra == sombraCorrecta) {
+            if (sombra == sombraCorrecta) {
+                // ¡Correcto! Reproducir sonido de acierto
+                SoundEffectManager.playCorrectSound();
+                
+                // Colocar forma correctamente
+                formaSeleccionada.setLayoutX(sombra.getLayoutX());
+                formaSeleccionada.setLayoutY(sombra.getLayoutY());
+                formaSeleccionada.setFitWidth(sombra.getFitWidth());
+                formaSeleccionada.setFitHeight(sombra.getFitHeight());
 
-            formaSeleccionada.setLayoutX(sombra.getLayoutX());
-            formaSeleccionada.setLayoutY(sombra.getLayoutY());
-            formaSeleccionada.setFitWidth(sombra.getFitWidth());
-            formaSeleccionada.setFitHeight(sombra.getFitHeight());
+                formaSeleccionada.setEffect(null);
+                formasColocadas.put(formaSeleccionada, true);
+                formaSeleccionada.setStyle("-fx-cursor: default;");
+                formaSeleccionada = null;
 
-            formaSeleccionada.setEffect(null);
-            formasColocadas.put(formaSeleccionada, true);
-            formaSeleccionada.setStyle("-fx-cursor: default;");
+                verificarJuegoCompletado();
 
-            formaSeleccionada = null;
+            } else {
+                // Incorrecto - reproducir sonido de error y hacer efecto visual
+                SoundEffectManager.playErrorSound();
+                
+                Glow glow = new Glow(0.8);
+                sombra.setEffect(glow);
 
-            verificarJuegoCompletado();
-
-        } else {
-
-            Glow glow = new Glow(0.8);
-            sombra.setEffect(glow);
-
-            new Thread(() -> {
-                try {
-                    Thread.sleep(500);
-                    javafx.application.Platform.runLater(() -> sombra.setEffect(null));
-                } catch (Exception e) {}
-            }).start();
+                new Thread(() -> {
+                    try {
+                        Thread.sleep(500);
+                        javafx.application.Platform.runLater(() -> sombra.setEffect(null));
+                    } catch (Exception e) {}
+                }).start();
+            }
         }
     }
 
 
-    // ----------------------------
-    // 🔵 Métodos llamados por FXML
-    // ----------------------------
-
+    // 🔵 Botones invisibles en FXML llaman a estos métodos:
     @FXML private void clickSombra1() { manejarClickEnSombra(sombra1); }
     @FXML private void clickSombra2() { manejarClickEnSombra(sombra2); }
     @FXML private void clickSombra3() { manejarClickEnSombra(sombra3); }
     @FXML private void clickSombra4() { manejarClickEnSombra(sombra4); }
     @FXML private void clickSombra5() { manejarClickEnSombra(sombra5); }
 
-
     private void verificarJuegoCompletado() {
-        boolean completo = formasColocadas.values().stream().allMatch(v -> v);
+        boolean todas = formasColocadas.values().stream().allMatch(v -> v);
 
-        if (completo) {
-            Timeline t = new Timeline(new KeyFrame(Duration.seconds(3), e -> mostrarMensajeVictoria()));
+        if (todas) {
+            // Esperar 3 segundos antes de mostrar victoria
+            Timeline t = new Timeline(
+                new KeyFrame(Duration.seconds(3), e -> mostrarMensajeVictoria())
+            );
             t.play();
         }
     }
@@ -183,6 +198,7 @@ public class ArbolFormasController {
             Stage stage = (Stage) rootPane.getScene().getWindow();
             stage.setTitle("Menú Principal");
             stage.setScene(scene);
+            // La música del menú se cambiará automáticamente en MenuController.initialize()
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -54,6 +54,9 @@ public class ArbolAnimalesController {
 
     @FXML
     public void initialize() {
+        // Reproducir música del minijuego
+        MusicManager.playMusic("sounds/background_music/Cosmic Christmas Lights.mp3");
+        
         // Efecto cuando seleccionas una pieza
         efectoSeleccion.setColor(Color.YELLOW);
         efectoSeleccion.setRadius(20);
@@ -118,6 +121,9 @@ public class ArbolAnimalesController {
             ImageView sombraCorrecta = animalASombra.get(animalSeleccionado);
 
             if (sombra == sombraCorrecta) {
+                // ¡Correcto! Reproducir sonido de acierto
+                SoundEffectManager.playCorrectSound();
+                
                 // Colocar animal en la sombra
                 animalSeleccionado.setLayoutX(sombra.getLayoutX());
                 animalSeleccionado.setLayoutY(sombra.getLayoutY());
@@ -131,6 +137,9 @@ public class ArbolAnimalesController {
 
                 verificarJuegoCompletado();
             } else {
+                // Incorrecto - reproducir sonido de error
+                SoundEffectManager.playErrorSound();
+                
                 // Efecto de error
                 Glow errorEffect = new Glow(0.8);
                 sombra.setEffect(errorEffect);

@@ -55,6 +55,9 @@ public class ArbolNavidadController {
     
     @FXML
     public void initialize() {
+        // Reproducir música del minijuego
+        MusicManager.playMusic("sounds/background_music/Cosmic Christmas Lights.mp3");
+        
         // Configurar efecto de selección
         efectoSeleccion.setColor(Color.YELLOW);
         efectoSeleccion.setRadius(20);
@@ -113,7 +116,10 @@ public class ArbolNavidadController {
                 ImageView sombraCorrecta = adornoASombra.get(adornoSeleccionado);
                 
                 if (sombra == sombraCorrecta) {
-                    // ¡Correcto! Colocar el adorno sobre la sombra
+                    // ¡Correcto! Reproducir sonido de acierto
+                    SoundEffectManager.playCorrectSound();
+                    
+                    // Colocar el adorno sobre la sombra
                     adornoSeleccionado.setLayoutX(sombra.getLayoutX());
                     adornoSeleccionado.setLayoutY(sombra.getLayoutY());
                     adornoSeleccionado.setFitWidth(sombra.getFitWidth());
@@ -132,7 +138,10 @@ public class ArbolNavidadController {
                     // Verificar si todos los números están colocados
                     verificarJuegoCompletado();
                 } else {
-                    // Incorrecto - hacer un efecto de "error"
+                    // Incorrecto - reproducir sonido de error
+                    SoundEffectManager.playErrorSound();
+                    
+                    // Hacer un efecto de "error"
                     Glow errorEffect = new Glow(0.8);
                     sombra.setEffect(errorEffect);
                     

@@ -6,70 +6,70 @@
 <?import javafx.scene.layout.Pane?>
 
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="720.0" prefWidth="1280.0"
+      prefHeight="1080.0" prefWidth="1920.0"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.juegolalala.ArbolVocalesController">
 
     <!-- Fondo -->
-    <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="false">
         <Image url="@img/arbol_letras/arbol_letras(sombra2).png" />
     </ImageView>
 
     <!-- Sombras (zonas donde colocar las vocales) -->
-    <ImageView fx:id="sombra1" fitHeight="300.0" fitWidth="300.0"
-               layoutX="525.0" layoutY="100.0"
+    <ImageView fx:id="sombra1" fitHeight="450.0" fitWidth="450.0"
+               layoutX="788.0" layoutY="150.0"
                opacity="0.3" pickOnBounds="true" preserveRatio="true" />
 
-    <ImageView fx:id="sombra2" fitHeight="300.0" fitWidth="300.0"
-               layoutX="439.0" layoutY="220.0"
+    <ImageView fx:id="sombra2" fitHeight="450.0" fitWidth="450.0"
+               layoutX="659.0" layoutY="330.0"
                opacity="0.3" pickOnBounds="true" preserveRatio="true" />
 
-    <ImageView fx:id="sombra3" fitHeight="300.0" fitWidth="300.0"
-               layoutX="593.0" layoutY="215.0"
+    <ImageView fx:id="sombra3" fitHeight="450.0" fitWidth="450.0"
+               layoutX="890.0" layoutY="323.0"
                opacity="0.3" pickOnBounds="true" preserveRatio="true" />
 
-    <ImageView fx:id="sombra4" fitHeight="300.0" fitWidth="335.0"
-               layoutX="366.0" layoutY="315.0"
+    <ImageView fx:id="sombra4" fitHeight="450.0" fitWidth="503.0"
+               layoutX="549.0" layoutY="473.0"
                opacity="0.3" pickOnBounds="true" preserveRatio="true" />
 
-    <ImageView fx:id="sombra5" fitHeight="300.0" fitWidth="300.0"
-               layoutX="660.0" layoutY="325.0"
+    <ImageView fx:id="sombra5" fitHeight="450.0" fitWidth="450.0"
+               layoutX="990.0" layoutY="488.0"
                opacity="0.3" pickOnBounds="true" preserveRatio="true" />
 
     <!-- Vocales en el recuadro izquierdo -->
-    <ImageView fx:id="letraA" fitHeight="230.0" fitWidth="230.0"
-               layoutX="9.0" layoutY="70.0"
+    <ImageView fx:id="letraA" fitHeight="345.0" fitWidth="345.0"
+               layoutX="14.0" layoutY="105.0"
                pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_letras/A.png" />
     </ImageView>
 
-    <ImageView fx:id="letraE" fitHeight="230.0" fitWidth="230.0"
-               layoutX="135.0" layoutY="70.0"
+    <ImageView fx:id="letraE" fitHeight="345.0" fitWidth="345.0"
+               layoutX="203.0" layoutY="105.0"
                pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_letras/E.png" />
     </ImageView>
 
-    <ImageView fx:id="letraI" fitHeight="230.0" fitWidth="230.0"
-               layoutX="9.0" layoutY="221.0"
+    <ImageView fx:id="letraI" fitHeight="345.0" fitWidth="345.0"
+               layoutX="14.0" layoutY="332.0"
                pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_letras/I.png" />
     </ImageView>
 
-    <ImageView fx:id="letraO" fitHeight="230.0" fitWidth="230.0"
-               layoutX="135.0" layoutY="221.0"
+    <ImageView fx:id="letraO" fitHeight="345.0" fitWidth="345.0"
+               layoutX="203.0" layoutY="332.0"
                pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_letras/O.png" />
     </ImageView>
 
-    <ImageView fx:id="letraU" fitHeight="230.0" fitWidth="230.0"
-               layoutX="9.0" layoutY="372.0"
+    <ImageView fx:id="letraU" fitHeight="345.0" fitWidth="345.0"
+               layoutX="14.0" layoutY="558.0"
                pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_letras/U.png" />
     </ImageView>
 
     <!-- Botón para volver al menú -->
-    <Button layoutX="1100.0" layoutY="20.0"
+    <Button layoutX="1650.0" layoutY="30.0"
             mnemonicParsing="false"
             onAction="#volverAlMenu"
             prefHeight="50.0" prefWidth="150.0"
@@ -81,36 +81,36 @@
     <!-- BOTONES INVISIBLES SOBRE CADA SOMBRA -->
 
     <Button fx:id="btnSombra1"
-            layoutX="625" layoutY="189"
-            prefHeight="98" prefWidth="88"
+            layoutX="938" layoutY="284"
+            prefHeight="147" prefWidth="132"
             opacity="0.0"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
             onAction="#clickSombra1" />
 
     <Button fx:id="btnSombra2"
-            layoutX="556" layoutY="311"
-            prefHeight="98" prefWidth="67"
+            layoutX="834" layoutY="467"
+            prefHeight="147" prefWidth="101"
             opacity="0.0"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
             onAction="#clickSombra2" />
 
     <Button fx:id="btnSombra3"
-            layoutX="717" layoutY="311"
-            prefHeight="98" prefWidth="52"
+            layoutX="1076" layoutY="467"
+            prefHeight="147" prefWidth="78"
             opacity="0.0"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
             onAction="#clickSombra3" />
 
     <Button fx:id="btnSombra4"
-            layoutX="488" layoutY="424"
-            prefHeight="87" prefWidth="78"
+            layoutX="732" layoutY="636"
+            prefHeight="131" prefWidth="117"
             opacity="0.0"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
             onAction="#clickSombra4" />
 
     <Button fx:id="btnSombra5"
-            layoutX="773" layoutY="430"
-            prefHeight="87" prefWidth="78"
+            layoutX="1160" layoutY="645"
+            prefHeight="131" prefWidth="117"
             opacity="0.0"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
             onAction="#clickSombra5" />

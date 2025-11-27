@@ -6,46 +6,46 @@
 <?import javafx.scene.layout.Pane?>
 
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="720.0" prefWidth="1280.0"
+      prefHeight="1080.0" prefWidth="1920.0"
       xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.example.juegolalala.ArbolNumerosController">
 
     <!-- Fondo -->
-    <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="false">
         <Image url="@img/arbol_numeros/arbol_numeros(sombra2).png" />
     </ImageView>
 
     <!-- Sombras -->
-    <ImageView fx:id="sombra1" fitHeight="230" fitWidth="230" layoutX="653" layoutY="115" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
-    <ImageView fx:id="sombra2" fitHeight="230" fitWidth="230" layoutX="570" layoutY="221" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
-    <ImageView fx:id="sombra3" fitHeight="230" fitWidth="230" layoutX="729" layoutY="223" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
-    <ImageView fx:id="sombra4" fitHeight="230" fitWidth="230" layoutX="519" layoutY="339" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
-    <ImageView fx:id="sombra5" fitHeight="230" fitWidth="230" layoutX="656" layoutY="339" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
+    <ImageView fx:id="sombra1" fitHeight="345" fitWidth="345" layoutX="980" layoutY="173" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
+    <ImageView fx:id="sombra2" fitHeight="345" fitWidth="345" layoutX="855" layoutY="332" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
+    <ImageView fx:id="sombra3" fitHeight="345" fitWidth="345" layoutX="1094" layoutY="335" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
+    <ImageView fx:id="sombra4" fitHeight="345" fitWidth="345" layoutX="779" layoutY="509" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
+    <ImageView fx:id="sombra5" fitHeight="345" fitWidth="345" layoutX="984" layoutY="509" opacity="0.3" pickOnBounds="true" preserveRatio="true"/>
 
     <!-- Números a la izquierda -->
-    <ImageView fx:id="numero1" layoutX="9" layoutY="70" fitHeight="230" fitWidth="230" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="numero1" layoutX="14" layoutY="105" fitHeight="345" fitWidth="345" pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_numeros/1.png"/>
     </ImageView>
 
-    <ImageView fx:id="numero2" layoutX="155" layoutY="70" fitHeight="230" fitWidth="230" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="numero2" layoutX="233" layoutY="105" fitHeight="345" fitWidth="345" pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_numeros/2.png"/>
     </ImageView>
 
-    <ImageView fx:id="numero3" layoutX="9" layoutY="221" fitHeight="230" fitWidth="230" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="numero3" layoutX="14" layoutY="332" fitHeight="345" fitWidth="345" pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_numeros/3.png"/>
     </ImageView>
 
-    <ImageView fx:id="numero4" layoutX="155" layoutY="221" fitHeight="230" fitWidth="230" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="numero4" layoutX="233" layoutY="332" fitHeight="345" fitWidth="345" pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_numeros/4.png"/>
     </ImageView>
 
-    <ImageView fx:id="numero5" layoutX="9" layoutY="372" fitHeight="230" fitWidth="230" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="numero5" layoutX="14" layoutY="558" fitHeight="345" fitWidth="345" pickOnBounds="true" preserveRatio="true">
         <Image url="@img/arbol_numeros/5.png"/>
     </ImageView>
 
     <!-- Botón volver -->
-    <Button layoutX="1100" layoutY="20" mnemonicParsing="false"
+    <Button layoutX="1650" layoutY="30" mnemonicParsing="false"
             onAction="#volverAlMenu"
             prefHeight="50" prefWidth="150"
             style="-fx-background-color: #4CAF50; -fx-text-fill: white;
@@ -57,8 +57,8 @@
 
     <!-- Botón sombra1 -->
     <Button fx:id="btnSombra1"
-            layoutX="742" layoutY="175"
-            prefHeight="88" prefWidth="52"
+            layoutX="1113" layoutY="263"
+            prefHeight="132" prefWidth="78"
             opacity="0.0"
             mnemonicParsing="false"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
@@ -66,8 +66,8 @@
 
     <!-- Botón sombra2 -->
     <Button fx:id="btnSombra2"
-            layoutX="652" layoutY="293"
-            prefHeight="88" prefWidth="65"
+            layoutX="978" layoutY="440"
+            prefHeight="132" prefWidth="98"
             opacity="0.0"
             mnemonicParsing="false"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
@@ -75,8 +75,8 @@
 
     <!-- Botón sombra3 -->
     <Button fx:id="btnSombra3"
-            layoutX="805" layoutY="294"
-            prefHeight="88" prefWidth="78"
+            layoutX="1208" layoutY="441"
+            prefHeight="132" prefWidth="117"
             opacity="0.0"
             mnemonicParsing="false"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
@@ -84,8 +84,8 @@
 
     <!-- Botón sombra4 -->
     <Button fx:id="btnSombra4"
-            layoutX="598" layoutY="410"
-            prefHeight="88" prefWidth="72"
+            layoutX="897" layoutY="615"
+            prefHeight="132" prefWidth="108"
             opacity="0.0"
             mnemonicParsing="false"
             style="-fx-background-color: transparent; -fx-cursor: hand;"
@@ -93,8 +93,8 @@
 
     <!-- Botón sombra5 -->
     <Button fx:id="btnSombra5"
-            layoutX="739" layoutY="407"
-            prefHeight="94" prefWidth="65"
+            layoutX="1109" layoutY="611"
+            prefHeight="141" prefWidth="98"
             opacity="0.0"
             mnemonicParsing="false"
             style="-fx-background-color: transparent; -fx-cursor: hand;"

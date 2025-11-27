@@ -6,63 +6,63 @@
 <?import javafx.scene.layout.Pane?>
 
 <Pane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
-      prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" 
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.juegolalala.ArbolNumerosController">
+      prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.juegolalala.ArbolNavidadController">
    
    <!-- Imagen del árbol con sombras (sombra2) -->
-   <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="false">
+   <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="false">
       <Image url="@img/arbol_navidad/arbol_navidad(sombra2).png" />
    </ImageView>
    
-   <!-- Sombras (zonas donde colocar los números) - Ajustadas según imagen sombra2 -->
-   <!-- Número 1 - arriba centro del árbol -->
-   <ImageView fx:id="sombra1" fitHeight="100.0" fitWidth="140.0" layoutX="697.0" layoutY="390.0" 
+   <!-- Sombras (zonas donde colocar los objetos) - Ajustadas según imagen sombra2 -->
+   <!-- Copo de nieve - arriba centro del árbol -->
+   <ImageView fx:id="sombra1" fitHeight="150.0" fitWidth="210.0" layoutX="1046.0" layoutY="585.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
-   <!-- Número 2 - izquierda media-alta -->
-   <ImageView fx:id="sombra2" fitHeight="130.0" fitWidth="120.0" layoutX="600.0" layoutY="290.0" 
+   <!-- Papa Noel - izquierda media-alta -->
+   <ImageView fx:id="sombra2" fitHeight="195.0" fitWidth="180.0" layoutX="900.0" layoutY="435.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
-   <!-- Número 3 - derecha media-alta -->
-   <ImageView fx:id="sombra3" fitHeight="130.0" fitWidth="120.0" layoutX="773.0" layoutY="285.0" 
+   <!-- Reno - derecha media-alta -->
+   <ImageView fx:id="sombra3" fitHeight="195.0" fitWidth="180.0" layoutX="1160.0" layoutY="428.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
-   <!-- Número 4 - izquierda media-baja -->
-   <ImageView fx:id="sombra4" fitHeight="130.0" fitWidth="120.0" layoutX="567.0" layoutY="410.0" 
+   <!-- Regalo - izquierda media-baja -->
+   <ImageView fx:id="sombra4" fitHeight="195.0" fitWidth="180.0" layoutX="851.0" layoutY="615.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
-   <!-- Número 5 - derecha media-baja -->
-   <ImageView fx:id="sombra5" fitHeight="130.0" fitWidth="120.0" layoutX="800.0" layoutY="395.0" 
+   <!-- Campana - derecha media-baja -->
+   <ImageView fx:id="sombra5" fitHeight="195.0" fitWidth="180.0" layoutX="1200.0" layoutY="593.0" 
               opacity="0.3" pickOnBounds="true" preserveRatio="true" />
    
-   <!-- Números en el recuadro izquierdo - mismo tamaño que sombras -->
-   <ImageView fx:id="numero1" fitHeight="100.0" fitWidth="140.0" layoutX="17.0" layoutY="150.0" 
+   <!-- Objetos navideños en el recuadro izquierdo -->
+   <ImageView fx:id="numero1" fitHeight="150.0" fitWidth="210.0" layoutX="26.0" layoutY="225.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_navidad/copo_nieve.png" />
    </ImageView>
    
-   <ImageView fx:id="numero2" fitHeight="140.0" fitWidth="180.0" layoutX="155.0" layoutY="120.0" 
+   <ImageView fx:id="numero2" fitHeight="210.0" fitWidth="270.0" layoutX="233.0" layoutY="180.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_navidad/papa_noel.png" />
    </ImageView>
    
-   <ImageView fx:id="numero3" fitHeight="130.0" fitWidth="180.0" layoutX="9.0" layoutY="271.0" 
+   <ImageView fx:id="numero3" fitHeight="195.0" fitWidth="270.0" layoutX="14.0" layoutY="407.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_navidad/Reno.png" />
    </ImageView>
    
-   <ImageView fx:id="numero4" fitHeight="130.0" fitWidth="180.0" layoutX="155.0" layoutY="271.0" 
+   <ImageView fx:id="numero4" fitHeight="195.0" fitWidth="270.0" layoutX="233.0" layoutY="407.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_navidad/regalo.png" />
    </ImageView>
    
-   <ImageView fx:id="numero5" fitHeight="130.0" fitWidth="180.0" layoutX="9.0" layoutY="422.0" 
+   <ImageView fx:id="numero5" fitHeight="195.0" fitWidth="270.0" layoutX="14.0" layoutY="633.0" 
               pickOnBounds="true" preserveRatio="true">
       <Image url="@img/arbol_navidad/campana.png" />
    </ImageView>
    
    <!-- Botón para volver al menú -->
-   <Button layoutX="1100.0" layoutY="20.0" mnemonicParsing="false" onAction="#volverAlMenu" 
+   <Button layoutX="1650.0" layoutY="30.0" mnemonicParsing="false" onAction="#volverAlMenu" 
            prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; 
            -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 10;" text="Volver al Menú" />
    

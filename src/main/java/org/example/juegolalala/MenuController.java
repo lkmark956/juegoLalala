@@ -22,9 +22,6 @@ public class MenuController {
     private ImageView lunaAnimales;
     
     @FXML
-    private ImageView lunaFormas;
-    
-    @FXML
     private ImageView lunaNavidad;
     
     @FXML
@@ -36,7 +33,6 @@ public class MenuController {
         animarLuna(lunaNumeros, 20, 2.5);
         animarLuna(lunaVocales, 25, 3.0);
         animarLuna(lunaAnimales, 18, 2.8);
-        animarLuna(lunaFormas, 22, 3.2);
         animarLuna(lunaNavidad, 20, 2.6);
     }
     
@@ -66,12 +62,6 @@ public class MenuController {
     private void abrirMinijuegoAnimales() {
         SoundEffectManager.playCorrectSound();
         abrirMinijuego("arbol-animales-view.fxml", "Árbol de animales");
-    }
-    
-    @FXML
-    private void abrirMinijuegoFormas() {
-        SoundEffectManager.playCorrectSound();
-        abrirMinijuego("arbol-formas-view.fxml", "Árbol de Formas");
     }
     
     @FXML
